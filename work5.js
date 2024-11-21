@@ -1,13 +1,14 @@
+require("dotenv").config();
 // MySQL module 연결
 const mysql = require("mysql");
 
 // 데이터베이스 연결 생성
 const connection = mysql.createConnection({
-  host: "192.168.56.101",
-  user: "khlee",
-  password: "lkh071550",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   database: "madang",
-  port: 4567,
+  port: process.env.DB_PORT,
 });
 
 // 데이터베이스 연결
